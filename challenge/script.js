@@ -5,18 +5,27 @@ var redSocial = {
   youtube: 'http://youtube.com/'
 };
 
-var redesSociales = function() {
-  var  output = '<ul>', 
-    iconos = document.querySelectorAll('.socialmediaicons');
-
-  for (var key in arguments[0]) {
-    output+= '<a href="' + redSocial[key] + '">' +
+let redesSociales = function() {
+iconos = document.querySelectorAll('.socialmediaicons');
+let  redes   
+  for (let key in arguments[0]) {
+    redes+= '<a href="' + redSocial[key] + '">' +
       '<img src="images/' + key + '.png"  ">' +
-      '</a>';
+      '</a>';          
   }
-  output+= '</ul>';
-  
-  for (var social = iconos.length - 1; social >= 0; social--) {
-    iconos[social].innerHTML = output;
+  redes;
+  for (let social = iconos.length - 1; social >= 0; social--) {
+    iconos[social].innerHTML = redes;
   };
 }(redSocial);
+
+
+
+//arguments es un objeto similar 
+//a Array accesible dentro de funciones 
+//que contiene los valores de los argumentos pasados a esa función.
+
+
+//keys() El método keys() devuelve un nuevo 
+//objeto Array Iterator que contiene las claves de índice con las que 
+//acceder a cada elemento en el array.
